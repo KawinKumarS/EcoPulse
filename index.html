@@ -8,9 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      // If opened directly from disk (file:/// protocol), automatically forward to the self-contained portable dashboard
+      if (window.location.protocol === 'file:') {
+        window.location.replace('./portable/index.html');
+      }
+    </script>
   </head>
   <body class="bg-slate-50 text-slate-900 antialiased overflow-x-hidden">
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <div style="font-family: sans-serif; text-align: center; padding: 40px;">
+          <h2>EcoPulse Dashboard</h2>
+          <p>If you opened this file directly, please open <a href="./portable/index.html"><strong>portable/index.html</strong></a>.</p>
+        </div>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
